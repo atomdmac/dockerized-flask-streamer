@@ -1,0 +1,15 @@
+version: '3'
+services:
+  opencv:
+    build: ./
+    volumes:
+      - "./src:/home/jovyan/src"
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+    ports:
+      - "5000:5000"
+      - "8888:8888"
+    environment:
+      DISPLAY: $DISPLAY
+      # CAMERA: opencv / pi / [blank]
+    # devices:
+      # - "/dev/video0:/dev/video0"
